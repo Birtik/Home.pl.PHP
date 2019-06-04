@@ -53,7 +53,6 @@
 				$end = (($i*2)+$plus);
 			}
 			
-			
 			for($j=0;$j<$plus;$j++)
 			{
 				for($i=0;$i<$begin-1;$i++)
@@ -108,16 +107,22 @@
 
 	if(count($argv)==2)
 	{
-		$circle = new Circle($argv[1]);
-		$circle->createCircle();
-		
+		if($argv[1]<=1)
+		{
+			echo "Invalid argument!";
+		}
+		else
+		{
+			$circle = new Circle($argv[1]);
+			$circle->createCircle();
+		}
 	}
 	else if(count($argv)==1)
 	{
-		echo "Nie podano argumentu!";
+		echo "No argument was given!";
 	}
 	else
 	{
-		echo "Zła ilość argumentów!";
+		echo "Incorect number of arguments!";
 	}
 ?>
